@@ -12,3 +12,17 @@ console.warn: LoginRecipes: "Falling back to a synchronous message for: https://
 1678983493902	Marionette	INFO	Stopped listening on port 63261
 !!! error running onStopped callback: TypeError: callback is not a function
 JavaScript error: resource:///modules/FaviconLoader.jsm, line 593: InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment
+1678987529995	geckodriver	INFO	Listening on 127.0.0.1:50847
+1678987533094	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50848" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\T33C6~1.STU\\AppData\\Local\\Temp\\rust_mozprofile7OqAam"
+1678987535183	Marionette	INFO	Marionette enabled
+1678987535196	Marionette	INFO	Listening on port 50861
+Read port: 50861
+WebDriver BiDi listening on ws://127.0.0.1:50848
+1678987535403	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\T33C6~1.STU\\AppData\\Local\\Temp\\rust_mozprofile7OqAam\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50848/devtools/browser/3814ad60-a3d9-491f-9e6c-e815d9754096
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://ya.ru."
+1678987544599	Marionette	INFO	Stopped listening on port 50861
+!!! error running onStopped callback: TypeError: callback is not a function
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 693: TypeError: this.tablesData[table] is undefined
