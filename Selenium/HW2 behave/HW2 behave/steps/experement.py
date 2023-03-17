@@ -34,7 +34,7 @@ def step(context, text):
     assert context.browser.find_element(By.XPATH,'//*[contains(text(), "%s")]' % text)
     
   
-#==================== YAHOO =========================#
+#======================= YAHOO ==========================#
     
 #Теперь введём запрос в Yahoo
 @then("push into field text '{text}'")
@@ -71,12 +71,12 @@ def step(context, text):
     
  
 
- #===================== GOOGLE ============================#
+ #====================== GOOGLE ===========================#
  
 #Теперь введём запрос в Google
 @then("insert to field text '{text}'")
 def step(context, text):
-
+    
     context.browser.find_element(By.CSS_SELECTOR, '[name="q"]').send_keys(text)
     
 #Теперь нажмём кнопку "Очистить" в Google
