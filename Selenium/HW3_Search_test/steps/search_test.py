@@ -55,15 +55,19 @@ def step(context, text):
     
     
 # #Проверяем количество выданных поиском результатов на странице
-@when("count the number of results per page")
-def step(context):
+# @when("count the number of results per page")
+# def step(context):
     
-    c = 0
-    context.browser.find_element(By.XPATH, '//*[@id="rso"]') 
+    # c = 0
+    # context.browser.find_element(By.XPATH, '//*[@id="rso"]') 
     
     
 
 #Проверяем общее количество найденных странице
+@when ("amount of serch results exists")
+def step(context):
+    amount = context.browser.find_element(By.XPATH, '//*[@id="result-stats"]').is_displayed()
+    assert amount is True
 
 #Проверяем правильность размещения картинок в результатах поиска
 
@@ -77,12 +81,12 @@ def step(context):
     # //*[@id="rso"]/div[11]/div/div/div/div[1]/div/a/div/span/div/img
     
     
-//*[@id="1_aeg5w01-00"]
-//*[@id="1_aeg5w02-00"]
-//*[@id="2_aeg5w0b-00"]
-//*[@id="2_aeg5w0a-00"],
-//*[@id="search-result"]/li[1]/div/div[1]/a/div/div
-//*[@id="search-result"]/li[2]/div/div[1]/a/div/div
+# //*[@id="1_aeg5w01-00"]
+# //*[@id="1_aeg5w02-00"]
+# //*[@id="2_aeg5w0b-00"]
+# //*[@id="2_aeg5w0a-00"],
+# //*[@id="search-result"]/li[1]/div/div[1]/a/div/div
+# //*[@id="search-result"]/li[2]/div/div[1]/a/div/div
 
 
     
