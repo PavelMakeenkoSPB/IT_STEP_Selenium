@@ -4,7 +4,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 import time
+import parse
 
  #================ GENERAL FUNCTIONS ==================#
   
@@ -13,6 +15,8 @@ import time
 @given('on Chrome website "{url}"')
 def step(context, url):
 #Измените строку, для выполнения теста в другом браузере
+    chrome_options = Options()
+    
     context.browser = webdriver.Chrome()
     context.browser.maximize_window()
     context.browser.get(url)
@@ -58,12 +62,14 @@ def step(context, text):
 @when("count the number of results per page")
 def step(context):
     
-    context.browser.find_elements(By.XPATH, '//*[@id="rso"]') 
+    counter = context.browser.find_elements(By.XPATH, '//*[@id="rso"]') 
+    print (counter)
+    return counter
     
     
 
 #Проверяем общее количество найденных странице
-@when ("amount of serch results exists")
+@when ("amount of search results exists")
 def step(context):
     amount = context.browser.find_element(By.XPATH, '//*[@id="result-stats"]').is_displayed()
     assert amount is True
