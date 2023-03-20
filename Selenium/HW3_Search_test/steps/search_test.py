@@ -58,26 +58,30 @@ def step(context, text):
     
     
     
-# #Проверяем количество выданных поиском результатов на странице
-@when("count the number of results per page")
+# #Проверяем, что количество выданных поиском результатов на странице равно 9
+@when("count the number of results per page is 9")
 def step(context):
     
-    counter = context.browser.find_elements(By.XPATH, '//*[@id="rso"]') 
-    print (counter)
-    return counter
+    counter_array = context.browser.find_elements(By.XPATH, '//*[@id="rso"]/div') 
+    
+    assert int(len(counter_array)) == 9
+    
     
     
 
 #Проверяем общее количество найденных странице
 @when ("amount of search results exists")
 def step(context):
-    amount = context.browser.find_element(By.XPATH, '//*[@id="result-stats"]').is_displayed()
-    assert amount is True
+    # amount = context.browser.find_element(By.XPATH, '//*[@id="result-stats"]').is_displayed()
+    numb = context.browser.find_element(By.XPATH, '//*[@id="result-stats"]').text
+    t = 'Результатов: примерно 714 000'
+    # assert amount is True
+    assert numb == t
 
 #Проверяем правильность размещения картинок в результатах поиска
 
 
-    
+
     # //*[@id="rso"]/div[1]/div/div/div[1]/div/div/div[1]/div/a/div/span/div/img
     # //*[@id="rso"]/div[2]/div/div/div/div/div/div[1]/div/a/div/span/div/img    
     # //*[@id="rso"]/div[9]/div/div/div/div[1]/div/a/div/span/div/img
