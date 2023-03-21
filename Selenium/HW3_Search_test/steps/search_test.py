@@ -52,11 +52,7 @@ def step(context, text):
 def step(context, text):
 
     context.browser.find_element(By.CSS_SELECTOR, '[name="btnK"]').click()
-    
-    
-    
-    
-    
+   
     
 # #Проверяем, что количество выданных поиском результатов на странице равно 9
 @when("count the number of results per page is 9")
@@ -67,8 +63,6 @@ def step(context):
     assert int(len(counter_array)) == 9
     
     
-    
-
 #Проверяем наличие отчёта о найденных результатах
 @when ("amount of search results exists '{text}'")
 def step(context, text):
