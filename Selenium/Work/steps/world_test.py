@@ -30,7 +30,7 @@ def step(context, url):
     context.browser.get(url)
  
  #Проверим, что мы на странице с результатами поиска, есть некоторый искомый текст
-@then("page include text '{text}'")
+@when("page include text '{text}'")
 def step(context, text):
     WebDriverWait(context.browser, 120).until(
         EC.presence_of_element_located((By.XPATH, '//*[contains(text(), "%s")]' % text))
@@ -81,7 +81,20 @@ def step(context):
     result_image = context.browser.find_element(By.TAG_NAME,'img').is_displayed()
 
     assert result_image is True
+ 
+ 
+# =======================  World of ================================ 
+
+# Кликаем повторно на поле поиска, чтобы получить выпадающий список
+@when ('click into search field')
+def step(context):
+    context.browser.find_element(By.CSS_SELECTOR, '[name="q"]').click()
     
+# Ищем картинку первого выпадающего элемента списка строки поиска    
+@when ('first falling object in field')
+def step(context):
+   s = context.browser.find_element("By.xpath(//div[@class='sbic vYOkbe' and style='background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCKjfMoEu9i-j5v2RNUJcXFQl9UHQ3zhme63IhreRHwmAOkiK8EhaRiQJL&s=10');")
+   assert s is True 
 
-
+    
     
