@@ -43,7 +43,7 @@ def step(context, text):
 #Теперь введём запрос в Google
 @when("insert to field text '{text}'")
 def step(context, text):
-    
+    context.browser.implicitly_wait(4)
     context.browser.find_element(By.CSS_SELECTOR, '[name="q"]').send_keys(text)
     
   
@@ -69,36 +69,22 @@ def step(context):
     
     
 
-#Проверяем общее количество найденных странице
-@when ("amount of search results exists")
-def step(context):
-    # amount = context.browser.find_element(By.XPATH, '//*[@id="result-stats"]').is_displayed()
-    numb = context.browser.find_element(By.XPATH, '//*[@id="result-stats"]').text
-    t = 'Результатов: примерно 714 000'
-    # assert amount is True
-    assert numb == t
+#Проверяем наличие отчёта о найденных результатах
+@when ("amount of search results exists '{text}'")
+def step(context, text):
+   
+    WebDriverWait(context.browser, 120).until(
+        EC.presence_of_element_located((By.XPATH, '//*[contains(text(), "%s")]' % text))
+    )
+    result_exists = context.browser.find_element(By.XPATH, '//*[@id="result-stats"]').is_displayed()
+    
+    assert result_exists == True and context.browser.find_element(By.XPATH,'//*[contains(text(), "%s")]' % text)
 
 #Проверяем правильность размещения картинок в результатах поиска
+@when ("image is displayed in results")
+def step(context):
+    context.browser.implicitly_wait(20)
+    result_image = context.browser.find_element(By.TAG_NAME,'img').is_displayed()
 
-
-
-    # //*[@id="rso"]/div[1]/div/div/div[1]/div/div/div[1]/div/a/div/span/div/img
-    # //*[@id="rso"]/div[2]/div/div/div/div/div/div[1]/div/a/div/span/div/img    
-    # //*[@id="rso"]/div[9]/div/div/div/div[1]/div/a/div/span/div/img
+    assert result_image is True
     
-    # //*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[1]/div/a/div/span/div/img
-    # //*[@id="rso"]/div[11]/div/div/div/div[1]/div/a/div/span/div/img
-    
-    
-# //*[@id="1_aeg5w01-00"]
-# //*[@id="1_aeg5w02-00"]
-# //*[@id="2_aeg5w0b-00"]
-# //*[@id="2_aeg5w0a-00"],
-# //*[@id="search-result"]/li[1]/div/div[1]/a/div/div
-# //*[@id="search-result"]/li[2]/div/div[1]/a/div/div
-
-
-    #//*[@id="rso"]/div[8]/div/div/div[1]/div/a/h3
-    #//*[@id="rso"]/div[5]/div/div/div[1]/div/a/h3
-    
-   
