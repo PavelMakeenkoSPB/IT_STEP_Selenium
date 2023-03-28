@@ -13,7 +13,7 @@ Scenario: Поиск запроса 'Бернский зенненхунд' в G
   
 Scenario: Поиск запроса 'Бернский зенненхунд' в Google через Edge
 
-  Given on Chrome website "https://www.google.com/"
+  Given on Edge website "https://www.google.com/"
   When insert to field text 'Бернский зенненхунд'
   When push Google Search button with text 'Поиск в Google'
   When counter of search contains number of results
