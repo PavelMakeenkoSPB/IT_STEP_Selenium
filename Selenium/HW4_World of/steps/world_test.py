@@ -83,6 +83,7 @@ def step(context):
 # Проверяем количество корректировочных пунктов выпадающего меню  
 @when('list of adjustments is 5')
 def step(context):
+    context.browser.implicitly_wait(4)
     ListOfAdjustments = context.browser.find_elements(By.XPATH,'//div[@class="sbic sb43"]')
     
     assert int(len(ListOfAdjustments)) == 5
