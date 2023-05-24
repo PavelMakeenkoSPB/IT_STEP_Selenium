@@ -33,55 +33,52 @@ typePass = find_element(By.XPATH, '//*[@id="password"]').send_keys("0Cf5Lt41")
 
 pushEnter = find_element(By.XPATH, '//*[@id="1"]/form/button').click()
 
-#waitingBar = WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.XPATH, '//ng-component/ng-component/div/div[1]'))).click()
+waitingBar = WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.XPATH, '//ng-component/ng-component/div/div[1]'))).click()
 
 
-#waitingMaterials = WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.XPATH, '//span[contains(text(), "Учебные материалы")]'))).click()
+waitingMaterials = WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.XPATH, '//span[contains(text(), "Учебные материалы")]'))).click()
 
-#waitigLibrary = WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "Библиотека")]'))).click()
-
-
-#html = browser.find_element(By.TAG_NAME, 'html')
-#html.send_keys(Keys.END)
-#time.sleep(1)
-#html.send_keys(Keys.END)
-#time.sleep(1)
-#html.send_keys(Keys.END)
-#time.sleep(1)
-#html.send_keys(Keys.END)
-#time.sleep(1)
-#html.send_keys(Keys.END)
-#time.sleep(1)
-#html.send_keys(Keys.END)
-#time.sleep(1)
-#time.sleep(1)
-#html.send_keys(Keys.END)
-#time.sleep(1)
-#html.send_keys(Keys.END)
-#time.sleep(1)
-#html.send_keys(Keys.END)
-#time.sleep(1)
-#html.send_keys(Keys.END)
-#time.sleep(1)
-#html.send_keys(Keys.END)
-#time.sleep(1)
-#html.send_keys(Keys.END)
-#html.send_keys(Keys.HOME)
+waitigLibrary = WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "Библиотека")]'))).click()
 
 
-#arr = []
-#for i in range(1, 58):
+html = browser.find_element(By.TAG_NAME, 'html')
+html.send_keys(Keys.END)
+time.sleep(1)
+html.send_keys(Keys.END)
+time.sleep(1)
+html.send_keys(Keys.END)
+time.sleep(1)
+html.send_keys(Keys.END)
+time.sleep(1)
+html.send_keys(Keys.END)
+time.sleep(1)
+html.send_keys(Keys.END)
+time.sleep(1)
+time.sleep(1)
+html.send_keys(Keys.END)
+time.sleep(1)
+html.send_keys(Keys.END)
+time.sleep(1)
+html.send_keys(Keys.END)
+time.sleep(1)
+html.send_keys(Keys.END)
+time.sleep(1)
+html.send_keys(Keys.END)
+time.sleep(1)
+html.send_keys(Keys.END)
+html.send_keys(Keys.HOME)
 
-    #st = str(i)
-    #xpathUpdate = "(" + '//img[contains(@src, "material-picture.png")]' + ')' + '[' + st + "]"
-    #arr.append(xpathUpdate)
+
+arr = []
+for i in range(1, 58):
+
+    st = str(i)
+    xpathUpdate = "(" + '//img[contains(@src, "material-picture.png")]' + ')' + '[' + st + "]"
+    arr.append(xpathUpdate)
     
-#time.sleep(2)
-#for k in range(len(arr)):
-    #downloadMat = browser.find_element(By.XPATH, arr[k]).click()
+time.sleep(2)
+for k in range(len(arr)):
+    downloadMat = browser.find_element(By.XPATH, arr[k]).click()
 
 
-# Makee_jv78
-# 0Cf5Lt41
-# //div/a[contains(@download, "null")] их 57
-# '(//img[contains(@src, "material-picture.png")])[1]' ih 1 iz 57
+
