@@ -11,7 +11,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.actions.wheel_input import ScrollOrigin
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 
 
 options = webdriver.ChromeOptions()
